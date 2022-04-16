@@ -1,0 +1,52 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine ("Homework5 基本資料輸入系統");//
+string name, gender, studentID, a, correction;
+
+int date;
+
+      Console.Write ("\nplease enter your name:  ");
+      name = Console.ReadLine ();
+      Console.Write ("please enter your gender(male/female):  ");
+      gender = Console.ReadLine ();
+      Console.Write ("please enter your birthday(YYYMMDD):  ");
+      date = Convert.ToInt32(Console.ReadLine());
+      Console.Write ("please enter your studentID:  ");
+      studentID = Console.ReadLine();
+do
+{
+      Console.WriteLine ("\nYour name is "+ name);
+      Console.WriteLine ("Your gender is "+ gender);
+      Console.WriteLine ("Your birthday is on "+ date);
+      Console.WriteLine ("Your studentID is "+ studentID);
+      Console.Write ("To continue please type1, rewrite type2:  ");
+      a=Console.ReadLine ();
+      if(a=="2")
+      {
+          Console.WriteLine ("which information you want to rewrite?(name/gender/birthday/studentID):  "); 
+          correction=Console.ReadLine ();
+
+            switch(correction)
+            {
+                case "name":
+                  Console.Write("please rewrite your name:  ");
+                  name=Console.ReadLine();
+                  continue;
+                case "gender":
+                  Console.Write("please rewrite your gender:  ");
+                  gender=Console.ReadLine();
+                  continue;
+                case "birthday":
+                  Console.Write("please rewrite your birthday:  ");
+                  date=Convert.ToInt32(Console.ReadLine());
+                  continue;
+                case "studentID":
+                  Console.Write("please rewrite your studentID:  ");
+                  studentID=Console.ReadLine();
+                  continue;
+              default:
+                Console.Write("sorry we can't find your information");
+                break;
+            }
+      }
+}while(a=="2");
+Console.WriteLine("\nwork is now complete");
